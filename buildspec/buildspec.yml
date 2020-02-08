@@ -12,4 +12,4 @@ phases:
     commands:
       - echo '=== build executed ==='
       - echo 'trigged by pr update'
-      - curl "https://${GITHUB_ACCESS_TOKEN}@api.github.com/repos/EgumaYuto/codebuild-try/issues/${PR_NO}/comments" -d '{"body": "comment from codebuild"}'
+      
