@@ -5,4 +5,4 @@ phases:
     commands:
       - echo '=== build executed ==='
       - echo 'trigged by pr update'
-      - echo $SOURCE_VERSION
+      - echo ${CODEBUILD_RESOLVED_SOURCE_VERSION}
