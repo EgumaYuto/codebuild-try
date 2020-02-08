@@ -4,3 +4,4 @@ phases:
   build:
     commands:
       - echo '=== build executed ==='
+      - echo 'trigged by pr update'
