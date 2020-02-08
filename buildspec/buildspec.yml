@@ -7,9 +7,8 @@ env:
 phases:
   install:
     commands:
-      - PR_NO=$(echo ${CODEBUILD_WEBHOOK_TRIGGER} | sed sed s_pr/__g)
+      - PR_NO=$(echo ${CODEBUILD_WEBHOOK_TRIGGER} | sed s_pr/__g)
   build:
     commands:
       - echo '=== build executed ==='
       - echo 'trigged by pr update'
-      
