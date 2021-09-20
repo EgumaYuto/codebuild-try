@@ -1,7 +1,13 @@
 version: 0.2
 
+env:
+  parameter-store:
+    GITHUB_ACCESS_TOKEN: "/github/access_token"
+
 phases:
+  install:
+    commands:
+      - PR_NO=$(echo ${CODEBUILD_WEBHOOK_TRIGGER} | sed s_pr/__g)
   build:
     commands:
-      - echo '=== build executed ==='
-      - echo 'trigged by pr update'
+      - curl "https://${GITHUB_ACCESS_TOKEN}@api.github.com/repos/EgumaYuto/codebuild-try/issues/${PR_NO}/comments" -d "{"body": "comment from codebuild"}"
